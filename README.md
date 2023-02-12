@@ -32,7 +32,8 @@ This will send the file `matrix.csv` that was sent with assessement email to cor
 
 Output/Response should be:
 
-```{
+```
+{
   "Flattened string": "1,2,3,4,5,6,7,8,9",
   "Inverted matrix formatted string": "1,4,7\n,2,5,8\n,3,6,9\n",
   "Matrix formatted string": "1,2,3\n,4,5,6\n,7,8,9\n",
