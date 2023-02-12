@@ -10,7 +10,6 @@ class Output:
 class CSVFileToString:
 
     def __init__(self, *, file_data):
-        # self.initial_data = file_data
         self.cleaned_file_data = self.clean_file_data(
             data=file_data
         )
