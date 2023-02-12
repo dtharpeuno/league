@@ -1,0 +1,12 @@
+version: '3.6'
+
+services:
+  backend:
+    build: ./api
+    networks:
+      - default
+    ports:
+      - "5000:5000"
+    volumes:
+        - ./api:/code
+    restart: always
