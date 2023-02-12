@@ -1,37 +1,43 @@
-# league
-
-## Assesement Given:
-
-1. Use the GitHub API to retrieve the most starred public Python projects.  Store the list of repositories in a database table. The table must contain the  repository ID, name, URL, created date, last push date, description, and  number of stars. This process should be able to be run repeatedly and  update the table each time. 
-Useful links from the GitHub API documentation: 
-https://developer.github.com/v3/ 
-https://developer.github.com/v3/search/ 
-2. Using the data in the table created in step 1, create a web application that  displays a list of the GitHub repositories and allows the user to click  through to view details on each one. Be sure to include all of the fields in  step 1 – displayed in either the list or detailed view. 
-3. Create a README file with a description of your architecture and notes on  installation of your application. You are free to use any Python, JavaScript,  or CSS frameworks as you see fit.
+# League Assessment
 
 ## Overview of stack:
 
 Technologies leveraged: 
 `Docker`
-`create-react-app`
 `Flask`
-`Postgres`
-`SQLAlchemy`
-`React`
-`Material UI`
-`JSS`
-`Python`
+`Python3`
 
 ## Layers in application:
 
 **`backend`**
 
-The `api` folder is the main `Flask` application that leverges the entire backend, which mainly funcitons as an API for the front-end app.
+The `api` folder is the main `Flask` application that leverges the entire backend, which accepts the CURL req for the File upload.
 
 ## Running environment
 
 - `backend` - Port 5000
 
 1. Clone repo
-2. run `docker-compose up` and wait for all docker builds to run and all services to start
-3. Navigate to  `localhost:5000` to  view back end health check
+2. `cd` into repo folder, where `docker-compose.yml` lives
+3. run `docker-compose up` and wait for all docker builds to run and all services to start and Python project to build
+4. Verify Flask API service is running by seeing activity in termial or navigating to `localhost:5000` to  view back end health check
+
+## CURL Commands for getting response for file upload
+
+Make sure you are in the `dir` with the `docker-compose.yml` file and run following `cmd`:
+
+`curl -F file=@files/matrix.csv http://localhost:5000/echo`
+
+This will send the file `matrix.csv` that was sent with assessement email to correct endpoint
+
+Output/Response should be:
+
+```{
+  "Flattened string": "1,2,3,4,5,6,7,8,9",
+  "Inverted matrix formatted string": "1,4,7\n,2,5,8\n,3,6,9\n",
+  "Matrix formatted string": "1,2,3\n,4,5,6\n,7,8,9\n",
+  "Product of list": 362880,
+  "Sum of integers": 45
+}
+```
+Which should satify all requirements requested in the assessement `README.md`
