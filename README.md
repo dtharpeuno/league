@@ -42,3 +42,14 @@ Output/Response should be:
 }
 ```
 Which should satify all requirements requested in the assessement `README.md`
+
+## Running tests
+
+You will need to have Python package manager `pip` installed, to be able to execute local tests, as well as pytest:
+
+1. Install pip
+2. `pip` install `pytest`
+3. `cd` into repo folder, where `docker-compose.yml` lives
+4. Need to utilize `python3`, which should be python version >= `3.7` interpreter to run test, since app uses features introduced in python `3.7`
+5. `python3 -m unittest discover . --v`
+
